@@ -1,11 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Index</title>
-</head>
-<body>
-    <h1>Hello from Index!</h1>
-</body>
-</html>
+{% extends "layout.html" %}
+
+{% block title %} 
+    The Index
+{% endblock %}
+
+{% block greeting %}
+    Hello {{ user }} from Index!
+{% endblock %}
+
+{% block user_list %} 
+
+    <p>Here is the list of users:</p>
+    {% for user in userList %}
+        <li>{{ user }}</li>
+    {% endfor %}
+
+{% endblock %}

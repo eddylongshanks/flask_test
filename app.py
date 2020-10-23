@@ -3,10 +3,13 @@ app = Flask(__name__)
 
 @app.route('/')
 def my_func():
-    return render_template('index.html')
+    currentUser = "Chris"
+    users = ["Gav", "Chris", "Eddy"]
+    return render_template('index.html', user=currentUser, userList=users)
 
 @app.route('/test_route')
 def my_func_2():
     return '<h2>Hi from /test_route!</h2>'
 
-app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True)
